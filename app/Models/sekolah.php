@@ -14,4 +14,8 @@ class sekolah extends Model
         'name',
         'kota_id',
     ] ;
+
+    public function sekolah(){
+        return $this->belongsTo(kota::class);
+    }
 }
