@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Kota;
-use App\Models\Pesantren;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
+use App\Models\kota;
+use App\Models\sekolah;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -27,8 +27,8 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'pesantren_id' => Pesantren::all()->random()->id,
-            'kota_id' => Kota::all()->random()->id,
+            'kota_id'=> kota::all()->random()->id,
+            'sekolah_id'=> sekolah::all()->random()->id,
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),

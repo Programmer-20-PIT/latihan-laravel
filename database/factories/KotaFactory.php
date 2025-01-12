@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Negara;
+use App\Models\negara;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Kota>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\kota>
  */
 class KotaFactory extends Factory
 {
@@ -18,8 +18,8 @@ class KotaFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->city(),
-            'negara_id' => Negara::all()->random()->id
+            'name'=>fake()->name,
+            'negara_id' => negara::all()->random()->id,
         ];
     }
 }

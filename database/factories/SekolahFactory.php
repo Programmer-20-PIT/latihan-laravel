@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Kota;
+use App\Models\kota;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Pesantren>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\sekolah>
  */
-class PesantrenFactory extends Factory
+class SekolahFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +18,8 @@ class PesantrenFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->company(),
-            'kota_id' => Kota::all()->random()->id
+            'name'=>fake()->name(),
+            'kota_id'=> kota::all()->random()->id,
         ];
     }
 }

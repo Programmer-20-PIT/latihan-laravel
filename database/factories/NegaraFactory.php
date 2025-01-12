@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Negara>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\negara>
  */
 class NegaraFactory extends Factory
 {
@@ -17,7 +17,7 @@ class NegaraFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->country(),
+            'name'=> fake()->name(),
         ];
     }
 }
