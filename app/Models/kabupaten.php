@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class kabupaten extends Model
+{
+    /** @use HasFactory<\Database\Factories\KabupatenFactory> */
+    use HasFactory;
+    protected $fillable=[
+        'nama',
+        'provinsi_id'
+    ];
+}
