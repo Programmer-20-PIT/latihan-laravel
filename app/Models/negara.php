@@ -12,5 +12,11 @@ class negara extends Model
 
     protected $fillable =[
         'nama'
+
     ];
+
+    public function provinsi()
+    {
+        return $this->hasMany(provinsi::class);
+    }
 }

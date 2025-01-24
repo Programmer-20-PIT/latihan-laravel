@@ -12,13 +12,18 @@ class kota extends Model
     use HasFactory;
     protected $fillable =[
         'nama',
-        'negara_id'
+        'provinsi_id,'
     ];
+    public function provinsi()
+        {
+        return $this->belongsTo(provinsi::class);
+        }
 
-    public function pesantrens(): HasMany
+    public function kecamatan()
     {
-        return $this->hasMany(pesantren::class);
+        return $this->hasMany(kecamatan::class);
     }
+
 }
 
 

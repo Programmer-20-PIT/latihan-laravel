@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class User extends Authenticatable
 {
@@ -19,10 +20,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
-        'kota_id',
         'pesantren_id',
+        'role_type',
+        'email'
     ];
 
     /**
@@ -46,5 +46,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function alamat()
+    {
+    return $this->morphToMany(alamat::class, 'alamat_table');
+    }
+    public function pesantren(): BelongsTo
+    {
+        return $this->belongsTo(pesantren::class);
+    }
+    public function detail()
+    {
+        return $this->morphOne(alamat_table::class, "alamat_table");
     }
 }

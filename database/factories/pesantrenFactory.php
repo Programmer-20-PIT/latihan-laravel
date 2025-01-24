@@ -20,8 +20,6 @@ class PesantrenFactory extends Factory
     {
         return [
             'nama' => fake()->company(),
-            'negara_id' => negara::all()->random()->id,
-            'kota_id' => Kota::all()->random()->id,
         ];
     }
 }

@@ -14,12 +14,20 @@ class pesantren extends Model
 
     protected $fillable=[
         'nama',
-        'negara_id',
-        'kota_id',
     ];
 
-    public function kota(): BelongsTo
+    public function kawasan()
     {
-        return $this->belongsTo(kota::class) ;
+    return $this->hasMany(kawasan::class);
+    }
+
+    public function user()
+    {
+    return $this->hasMany(User::class);
+    }
+
+    public function detail()
+    {
+        return $this->morphOne(alamat_table::class, 'alamattable');
     }
 }

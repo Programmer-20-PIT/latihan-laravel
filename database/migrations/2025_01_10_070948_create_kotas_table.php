@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('kotas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama')->nullable();
+            $table->foreignId('provinsi_id')->references('id')->on('provinsis')->onDelete('cascade')->nullable();
             $table->timestamps();
         });
     }

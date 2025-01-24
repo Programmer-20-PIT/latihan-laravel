@@ -9,20 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::table('kotas', function (Blueprint $table) {
-            $table->foreignId('negara_id')->after('id')->references('id')->on('negaras')->nullable()->onDelete('cascade');
-        });
-        Schema::table('pesantrens', function (Blueprint $table) {
-            $table->foreignId('negara_id')->after('id')->references('id')->on('negaras')->nullable()->onDelete('cascade');
-            $table->foreignId('kota_id')->after('id')->references('id')->on('kotas')->nullable()->onDelete('cascade');
-        });
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('pesantren_id')->after('id')->references('id')->on('pesantrens')->nullable()->onDelete('cascade');
-            $table->foreignId('kota_id')->after('id')->references('id')->on('kotas')->nullable()->onDelete('cascade');
-        });
-    }
+    // public function up(): void
+    // {
+    //     Schema::table('kotas', function (Blueprint $table) {
+    //         $table->foreignId('negara_id')->after('id')->references('id')->on('negaras')->nullable()->onDelete('cascade');
+    //     });
+    //     Schema::table('pesantrens', function (Blueprint $table) {
+    //         $table->foreignId('negara_id')->after('id')->references('id')->on('negaras')->nullable()->onDelete('cascade');
+    //         $table->foreignId('kota_id')->after('id')->references('id')->on('kotas')->nullable()->onDelete('cascade');
+    //     });
+    //     Schema::table('users', function (Blueprint $table) {
+    //         $table->foreignId('pesantren_id')->after('id')->references('id')->on('pesantrens')->nullable()->onDelete('cascade');
+    //         $table->foreignId('kota_id')->after('id')->references('id')->on('kotas')->nullable()->onDelete('cascade');
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

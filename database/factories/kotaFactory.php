@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\negara;
+use App\Models\provinsi;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,7 +19,7 @@ class KotaFactory extends Factory
     {
         return [
             'nama' => fake()->city(),
-            'negara_id' => negara::all()->random()->id,
+            'provinsi_id' => provinsi::all()->random()->id,
         ];
     }
 }
