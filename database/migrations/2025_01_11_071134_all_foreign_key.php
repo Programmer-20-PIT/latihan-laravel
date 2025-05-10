@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('kotas', function (Blueprint $table) {
+        Schema::table ('kotas', function (Blueprint $table) {
             $table->foreignId('negara_id')->after('id')->references('id')->on('negaras')->onDelete('cascade')->nullable();
         });
-
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('pesantren_id')->after('id')->references('id')->on('pesantrens')->onDelete('cascade')->nullable();
+        Schema::table ('sekolahs', function (Blueprint $table) {
             $table->foreignId('kota_id')->after('id')->references('id')->on('kotas')->onDelete('cascade')->nullable();
         });
-
-        Schema::table('pesantrens', function (Blueprint $table) {
+        Schema::table ('users', function (Blueprint $table) {
             $table->foreignId('kota_id')->after('id')->references('id')->on('kotas')->onDelete('cascade')->nullable();
-        });
+            $table->foreignId('sekolah_id')->after('id')->references('id')->on('sekolahs')->onDelete('cascade')->nullable();
+    });
     }
 
     /**

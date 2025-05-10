@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Kota;
-use App\Models\Negara;
-use App\Models\Pesantren;
+use App\Models\kota;
+use App\Models\negara;
+use App\Models\sekolah;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,9 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Negara::factory(25)->create();
-        Kota::factory(500)->create();
-        Pesantren::factory(1000)->create();
-        User::factory(2500)->create();
+        negara::factory(20)->create();
+        kota::factory(40)->create();
+        sekolah::factory(80)->create();
+        User::factory(240)->create();
+
+
     }
 }
